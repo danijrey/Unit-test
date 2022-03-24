@@ -1,23 +1,11 @@
-/* const jwt = require('jsonwebtoken');
-const User = require('../models/user.model'); */
-
 module.exports = {
   async SaveProductMiddleware(req, res, next) {
-    /*     try {
-      const token = req.headers.authorization;
+    try {
+      //Crea lógica de validación
 
-      if(!token) {
-        throw Error('Your session has expired');
-      }
-
-      const { id } = jwt.verify(token, process.env.SECRET);
-
-      const user = await User.findById(id);
-
-      req.user = user;
       next();
     } catch (error) {
-      res.status(401).json({ message: error.message });
-    } */
+      res.status(401).json(error);
+    }
   },
 };
